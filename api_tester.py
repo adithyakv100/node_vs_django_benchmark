@@ -1,39 +1,28 @@
 import requests
 import random
 
-from words_data import titles, descriptions
-
-url = "http://127.0.0.1:8000/tasks/"
-
-node_urls = {
-    "create_task" : "127.0.0.1:3000/tasks",
-    "update_task" : "127.0.0.1:3000/tasks/1/status"
-} 
-
-django_urls = {
-    "create_task" : "http://127.0.0.1:8000/tasks/create",
-    "update_task" : "127.0.0.1:8000/tasks/1/status"
-}
-
-
-
-
-payload = {}
-headers = {
-  'Content-Type': 'application/x-www-form-urlencoded',
-  'sample_header': 'here ...'
-}
-
-# response = requests.request("GET", url, headers=headers, data = payload)
-
-# print(response.text.encode('utf8'))
-
-##### EXAMPLE THREAD #####
 
 import threading
 import queue
 import sys
 import time
+
+from words_data import titles, descriptions
+
+url = "http://127.0.0.1:8000/tasks/"
+
+"""node_urls = {
+    "create_task" : "http://127.0.0.1:3000/tasks",
+    "update_task" : f"http://127.0.0.1:3000/tasks/{random_id}/status"
+} 
+
+django_urls = {
+    "create_task" : "http://127.0.0.1:8000/tasks/create",
+    "update_task" : f"http://127.0.0.1:8000/tasks/{random_id}/status"
+}"""
+
+
+
 
 
 status_types = ['IN_PROGRESS','DONE']
